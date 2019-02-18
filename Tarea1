@@ -1,0 +1,16 @@
+desocup<- read.csv("C:\\Users\\ALUMNO-D22\\Documents\\Des2006-20018.csv")
+tdesoc<-ts(desocup,start =  = 2006, end = 2018,frequency = 12)
+tdesocadi<-decompose(tdesoc)
+plot(decompose(tdesoc))
+tdesocmult <- decompose(tdesoc,type= "mult")
+plot(tdesocmult)
+names(tdesocadi)
+a<-c(tdesocadi$trend)
+print(a)
+b<-c(tdesocadi$seasonal)
+print(b)
+d<-c(tdesocadi$random)
+print(d)
+j=a+b+d
+print(j)
+
