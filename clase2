@@ -1,0 +1,42 @@
+#Clase 2
+
+base1<-read.csv('C://Users//ALUMNO-D23//Downloads//PIB-Mexico-2.csv')
+base1ts<-ts (base1, star= 1961 ,end= 2017, frequency = 1)
+plot(base1ts, ylab="% crecimiento anual del PIB en México",
+     xlab="Años")
+#ylab= etiqueta del eje "y"
+#xlab= etiqueta del eje "x"
+
+require (datasets) # mandar llamr paqueteria
+plot(EuStockMarkets)
+help("EuStockMarkets")
+
+#la siguente funcion es para graficar series de tiempo (ts.plot)
+
+ts.plot(EuStockMarkets, col=10:14, xlab="Años", ylab= "Indices principales
+        de la bolsa Europea", main="Bolsas de valores Europeas")
+legend("toplef",colnames (EuStockMarkets), lty=50, col=4:8, bty="n" )
+
+#lty= grosor de las lineas 
+#bty= recuadro que marque los indices
+
+View(EuStockMarkets)
+
+## Ejercicio :
+## Bajar la tasa de desmpleo del 2005 al 2017 de México
+## Importarla en R
+## Convertirla a serie de tiempo
+## Grafica la serie de tiempo con los siguientes argumentos:
+## intentar insertar algunos comentarios dentro de la grafica
+## por ejemplo cuando hay crisis esta tasa se incrementa.
+
+base2<-read.csv('C://Users//ALUMNO-D23//Downloads//tasa de desempleo.csv')
+base2ts<-ts (base2, star= 2005 ,end= 2015, frequency = 4)
+
+plot(base2ts, ylab="Tasa de desempleo",
+     xlab="Años")
+
+ts.plot(base2ts, col=12, xlab="Años", ylab= "Tasa de desempleo en México"
+        , main= "Tasa de desempleo")
+
+text(2009,12,"Crisis", col = 5)
