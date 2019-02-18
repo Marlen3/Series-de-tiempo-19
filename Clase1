@@ -1,0 +1,30 @@
+#Clase 1
+
+AirPassengers 
+plot(AirPassengers)
+#Serie de tiempo de los pasajeros de una aerolinea en forma mensual de 1949- 1960,
+#es una serie estacional que lleva cierta tencencia
+help("AirPassengers")
+
+data()
+
+BJsales
+plot(BJsales)
+#Serie de tiempo temporal de las ventas BJsales y el indicador con 150 
+#observaciones es una serie de tiempo ciclica creciete.
+help("BJsales")
+
+
+Nile
+plot(Nile)
+#Serie de tiempo temporal Mediciones del flujo 
+#anual del río Nilo en Ashwan 1871–1970. 
+#observaciones es una serie de tiempo ciclica decreciente.
+help("Nile")
+
+lynx
+plot(lynx)
+#Serie de tiempo temporal que representa 
+#Números anuales de trampas de lince para 1821–1934 en Canadá
+#se observa que es una serie tendencial y estacional.
+help("lynx")
