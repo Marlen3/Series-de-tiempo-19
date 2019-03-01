@@ -1,0 +1,30 @@
+require(ggplot2)
+require(fpp2)
+require(forecast)
+
+
+beer2<- window(ausbeer,start=1992,end=c(2007,4))
+beerfit1<-meanf(beer2,h=10)
+beerfit2<-rwf(beer2,h=10)
+beerfit3<-snaive(beer2,h=10)
+autoplot(window(ausbeer,start=1992))+
+  autolayer(beerfit1,series="media", PI=FALSE)+
+  autolayer(beerfit2,series="ingenuo", PI=FALSE)+
+  autolayer(beerfit3,series="ingenuo estacional", PI=FALSE)+
+  xlab("año")+
+  ylab("litros")+
+  ggtitle("prinosticos produccion cerveza")+
+  guides(colour=guide_legend(title="pronostico"))
+
+beer3<-window(ausbeer, start=2008)
+accuracy(beerfit1,beer3)## dame los errores de el primer pronostico a partir del 2008
+accuracy(beerfit2,beer3)
+accuracy(beerfit3,beer3)## accuracy para sacar matriz de errores
+
+#como podemos observar el mejor pronostico es el del ingenuo estacional
+#ya que tiene valores de los errores menores
+
+## La grafica muestra tres metodos de pronostico aplicados a
+# la produccion de cerveza australiana trimestral utilizando datos
+# hasta finales de 2007. Tambien se muestran los valores reales
+# para el periodo 2008- 2010
